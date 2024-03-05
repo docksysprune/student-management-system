@@ -78,15 +78,13 @@ public class StudentServiceImplTest {
 
     @Test
     void deleteStudentTest() {
-        // Preparación
+
         Long studentId = 1L;
 
         doNothing().when(studentRepository).deleteById(studentId);
 
-        // Acción
         studentService.deleteStudent(studentId);
 
-        // Verificación
         verify(studentRepository, times(1)).deleteById(studentId);
     }
 }
